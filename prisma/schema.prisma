@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url =env("DATABASE_URL")
+}
+
+model Motorcycle {
+  id              String   @id @default(cuid())
+  plateNumber     String   @unique
+  brand           String
+  model           String
+  year            Int
+  color           String
+  engineNumber    String   @unique
+  chassisNumber   String   @unique
+  ownerName       String
+  ownerPhone      String
+  ownerEmail      String?
+  type            String    @default("Private")
+  registrationDate DateTime @default(now())
+  lastService     DateTime?
+  notes           String?
+  qrCode          String?  // Store QR as base64 or URL
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([plateNumber])
+  @@index([engineNumber])
+}
