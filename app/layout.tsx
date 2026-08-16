@@ -24,7 +24,6 @@ export default function RootLayout({
               🏍️ E-Logbook
             </Link>
             <div className="space-x-4">
-              <Link href="/" className="hover:text-blue-600">Home</Link>
               <Link href="/admin" className="hover:text-blue-600">Admin</Link>
             </div>
           </div>
