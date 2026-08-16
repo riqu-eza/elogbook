@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     })
 
     // Generate QR Code
-    const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000'
+    const baseUrl = process.env.NEXTAUTH_URL || 'https://elogbook-m.vercel.app'
     const qrData = `${baseUrl}/motorcycle/${motorcycle.id}`
     const qrCode = await QRCode.toDataURL(qrData)
     
