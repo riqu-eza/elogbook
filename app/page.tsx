@@ -1,8 +1,9 @@
-import Link from 'next/link'
-import { FaMotorcycle, FaQrcode, FaEye, FaPlus, FaShare, FaShieldAlt } from 'react-icons/fa'
+import { Analytics } from '@vercel/analytics/next'
+import {  FaQrcode, FaEye, FaPlus, FaShieldAlt } from 'react-icons/fa'
 
 export default function Home() {
   return (
+    <>
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-4 py-16 sm:py-24">
@@ -143,7 +144,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
      
 
       {/* Footer */}
@@ -161,5 +161,7 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    <Analytics/>
+    </>
   )
 }
