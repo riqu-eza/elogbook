@@ -1,7 +1,8 @@
+// app/layout.tsx
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Link from 'next/link'
+import NavWrapper from '@/components/NavWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,16 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="bg-white shadow-md">
-          <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold text-blue-600">
-              🏍️ E-Logbook
-            </Link>
-            <div className="space-x-4">
-              <Link href="/admin" className="hover:text-blue-600">Admin</Link>
-            </div>
-          </div>
-        </nav>
+        <NavWrapper/>
         {children}
       </body>
     </html>
